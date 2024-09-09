@@ -92,5 +92,8 @@ class Program
         
         if (!success)
             Console.WriteLine("Ошибка ввода");
+        
+        Console.WriteLine("Нажмите любую клавишу для выхода.");
+        Console.ReadKey();
     }
 }
