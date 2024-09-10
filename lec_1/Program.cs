@@ -68,12 +68,30 @@ class Program
 
         return true;
     }
+
+    static bool Info()
+    {
+        Console.WriteLine("\n------");
+        Console.WriteLine("# Данная программа на языке C# переводит координаты из одной системы координат в другую." +
+                          "Поддерживается перевод из Декартовой системы координат в полярную и обратно.\n\n" +
+                          "## Использованные формулы\n" +
+                          "Для перевода из полярной системы в Декартовую:\n" +
+                          "x = r * cos(ф)\n" +
+                          "y = r * sin(ф)\n" +
+                          "Для перевода из Декартовой системы в полярную:\n" +
+                          "- r = sqrt(x^2 + y^2)\n" +
+                          "- tan(ф) = x/y\n\n"); 
+        Console.WriteLine("Страница работы на GitHub: https://github.com/Mikkkkkkka/physics_lectures/releases/tag/lec_1");
+        
+        return true;
+    }
     
     static void Main()
     {
         Console.WriteLine("Выберете преобразование:");
         Console.WriteLine("1. Из Декартовых координат в полярные.");
         Console.WriteLine("2. Из полярных координат в Декартовые.");
+        Console.WriteLine("\nИли введите '0' чтобы получить больше информации.");
         
         var input = Console.ReadLine();
 
@@ -87,6 +105,7 @@ class Program
         {
             1 => TryOperation1(),
             2 => TryOperation2(),
+            0 => Info(),
             _ => false
         };
         
